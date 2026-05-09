@@ -4,19 +4,23 @@ color 0A
 mode con: cols=72 lines=25
 
 echo.
-echo  ╔══════════════════════════════════════════════╗
-echo  ║       🎮  Hermes Xbox Bridge Launcher  🎮     ║
-echo  ╚══════════════════════════════════════════════╝
+echo  ============================================
+echo        HERMES XBOX BRIDGE LAUNCHER
+echo  ============================================
 echo.
 
 REM ── Check Python ──────────────────────────────────────────
 echo [1/4] Checking Python...
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ Python not found!
     echo.
-    echo Please install Python 3.9+ from:
+    echo   ERROR: Python is not installed!
+    echo.
+    echo   Go here to download Python:
     echo   https://python.org/downloads
+    echo.
+    echo   Download and run the installer.
+    echo   MAKE SURE to check "Add Python to PATH"
     echo.
     pause
     exit /b 1
@@ -25,33 +29,44 @@ for /f "tokens=2" %%v in ('python --version 2^>^&1') do set PYVER=%%v
 echo    Found Python %PYVER%
 
 REM ── Check Python version (need 3.9+) ──────────────────────
-echo [2/4] Checking Python version (need 3.9+)...
+echo [2/4] Checking Python version...
 python -c "import sys; sys.exit(0 if sys.version_info >= (3,9) else 1)"
 if errorlevel 1 (
-    echo ❌ Python 3.9+ required. Current: %PYVER%
+    echo.
+    echo   ERROR: Python 3.9+ required. Current: %PYVER%
+    echo.
     pause
     exit /b 1
 )
-echo    ✓ Python version OK
+echo    OK - Python version is fine
 
 REM ── Install dependencies ──────────────────────────────────
-echo [3/4] Installing dependencies (first time only)...
-python -m pip install xbox-smartglass-core websockets --quiet
+echo [3/4] Installing dependencies...
+echo.
+echo   This takes about 2 minutes.
+echo   You will see progress below:
+echo.
+python -m pip install xbox-smartglass-core websockets
 if errorlevel 1 (
-    echo ❌ Failed to install dependencies.
-    echo Try running this as Administrator.
+    echo.
+    echo   ERROR: Failed to install dependencies.
+    echo   Try running Command Prompt as Administrator:
+    echo   Press Windows key, type "cmd", right-click,
+    echo   choose "Run as administrator"
+    echo.
     pause
     exit /b 1
 )
-echo    ✓ Dependencies installed
+echo.
+echo    OK - Dependencies installed
 
 REM ── Launch ────────────────────────────────────────────────
 echo [4/4] Starting bridge...
 echo.
-echo ═══════════════════════════════════════════════════════════
-echo  Make sure your laptop is on the SAME WiFi as your Xbox.
-echo  Keep this window OPEN while you game.
-echo ═══════════════════════════════════════════════════════════
+echo  ============================================
+echo   IMPORTANT: Your laptop must be connected
+echo   to the SAME WiFi as your Xbox.
+echo  ============================================
 echo.
 python "%~dp0laptop_bridge.py"
 pause
