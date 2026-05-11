@@ -34,7 +34,7 @@ logger = logging.getLogger("laptop-bridge")
 
 # ─── CONFIG ────────────────────────────────────────────────────────────────
 DEFAULT_VPS_URL = "wss://76.13.99.138:19999"
-DEFAULT_TOKEN="edbb0106ff4745f5"  # Must match server BRIDGE_SECRET
+DEFAULT_TOKEN = "6fee94bc0c185879"  # Must match server BRIDGE_SECRET
 # ─────────────────────────────────────────────────────────────────────────
 
 class XboxBridge:

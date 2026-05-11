@@ -46,13 +46,17 @@ echo.
 echo   This takes about 2 minutes.
 echo   You will see progress below:
 echo.
-python -m pip install xbox-smartglass-core websockets
+python -m pip install --no-deps xbox-smartglass-core websockets
 if errorlevel 1 (
     echo.
     echo   ERROR: Failed to install dependencies.
+    echo   This may be due to Python 3.14 compatibility issues.
     echo   Try running Command Prompt as Administrator:
     echo   Press Windows key, type "cmd", right-click,
     echo   choose "Run as administrator"
+    echo.
+    echo   Or try installing manually:
+    echo   pip install --no-deps xbox-smartglass-core websockets
     echo.
     pause
     exit /b 1
