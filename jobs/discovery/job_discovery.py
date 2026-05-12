@@ -34,9 +34,8 @@ def search_serpapi(query, location="Tallahassee+FL", num=20):
     results = []
     
     if not api_key:
-        # Free fallback: use jina to read job aggregator pages
         return free_search(query, location, num)
-    
+
     try:
         import urllib.request, urllib.parse
         params = {
@@ -46,9 +45,14 @@ def search_serpapi(query, location="Tallahassee+FL", num=20):
             "api_key": api_key
         }
         url = "https://serpapi.com/search?" + urllib.parse.urlencode(params)
-        with urllib.request.urlopen(url, timeout=15) as r:
-            data = json.loads(r.read())
-            for job in data.get("jobs_results", []):
+        with urllib.request.urlopen(url, timeout=20) as r:
+            raw = r.read()
+            data = json.loads(raw) if isinstance(raw, str) else json.loads(raw.decode('utf-8', errors='replace'))
+            # SerpAPI returns jobs inside "jobs_results" for job searches
+            jobs_data = data if isinstance(data, dict) else {}
+            for job in jobs_data.get("jobs_results", [])[:num]:
+                if not isinstance(job, dict):
+                    continue
                 results.append({
                     "title": job.get("title", ""),
                     "company": job.get("company_name", ""),
@@ -60,6 +64,24 @@ def search_serpapi(query, location="Tallahassee+FL", num=20):
                     "query": query,
                     "discoveredAt": datetime.now().isoformat()
                 })
+            # Also check organic results for job boards
+            if not results:
+                for result in jobs_data.get("organic_results", [])[:num]:
+                    if not isinstance(result, dict):
+                        continue
+                    snippet = result.get("snippet", "")
+                    results.append({
+                        "title": result.get("title", query),
+                        "company": result.get("displayed_link", query),
+                        "location": location,
+                        "url": result.get("link", ""),
+                        "salary": "",
+                        "date": "",
+                        "source": "serpapi_organic",
+                        "query": query,
+                        "snippet": snippet[:200],
+                        "discoveredAt": datetime.now().isoformat()
+                    })
     except Exception as e:
         print(f"SerpAPI error: {e}")
     
