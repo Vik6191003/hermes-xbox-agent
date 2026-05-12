@@ -1,0 +1,180 @@
+{
+  "name": "Alexander Barnes",
+  "phone": "850-404-3310",
+  "email": "Vik6191003@gmail.com",
+  "location": "Tallahassee, FL",
+  "authorized_us": true,
+  "background_check": true,
+  "drug_test": true,
+  "availability": {
+    "days": "Every day EXCEPT Sunday",
+    "need_one_weekday_off": true,
+    "shift_preference": "Day or Overnight (NOT evening — conflicts with firefighter program)",
+    "start_firefighter_program": "July (6PM-10PM, unpaid training)"
+  },
+  "salary": {
+    "minimum": 17,
+    "target": "High-end money"
+  },
+  "education": {
+    "high_school": "Leon High School",
+    "associate": {
+      "degree": "Associate of Arts — Healthcare & General Studies",
+      "school": "Tallahassee Community College",
+      "status": "COMPLETED"
+    },
+    "bachelor": {
+      "degree": "Bachelor of Science — Construction Management",
+      "school": "Arkansas State University — Online",
+      "status": "IN PROGRESS",
+      "expected": "After fire school"
+    }
+  },
+  "work_history": [
+    {
+      "title": "Correctional Officer",
+      "company": "Wakulla Correctional Institution",
+      "start": "Feb 2026",
+      "end": "Present",
+      "pay": 22,
+      "current": true,
+      "duties": "Security operations, inmate supervision, facility safety, de-escalation, 80-130 inmate dormitory"
+    },
+    {
+      "title": "CT Medical Assistant",
+      "company": "Tallahassee Radiology Associates",
+      "start": "Apr 2025",
+      "end": "Sep 2025",
+      "current": false,
+      "duties": "Patient prep for imaging, vitals, positioning, procedure explanation, sanitation compliance"
+    },
+    {
+      "title": "Overnight Manager",
+      "company": "Walmart",
+      "start": "Mar 2024",
+      "end": "Present",
+      "current": false,
+      "note": "On Leave",
+      "duties": "Inventory management, team coordination, overnight operations"
+    },
+    {
+      "title": "Stocker",
+      "company": "Walmart",
+      "start": "Sep 2022",
+      "end": "Mar 2024",
+      "current": false,
+      "duties": "Inventory management, shelf restocking"
+    },
+    {
+      "title": "Grill Cook",
+      "company": "Chipotle Mexican Grill",
+      "start": "Jan 2021",
+      "end": "Aug 2022",
+      "current": false,
+      "duties": "Food preparation, grill operations, food safety compliance, customer service"
+    },
+    {
+      "title": "Carhop",
+      "company": "Sonic Drive-In",
+      "start": "Jan 2020",
+      "end": "Dec 2021",
+      "current": false,
+      "duties": "Customer service, drive-thru operations, food prep, cash handling"
+    }
+  ],
+  "certifications": [
+    "BLS — Basic Life Support",
+    "OSHA 30",
+    "OSHA Safety Awareness",
+    "Class D Security License",
+    "CJBAT (Corrections)",
+    "CDL Permit",
+    "FEMA Certified",
+    "Forklift & Pallet Jack Certified",
+    "Sanitation & Sterilization Training"
+  ],
+  "skills": [
+    "Security & inmate supervision",
+    "De-escalation & conflict resolution",
+    "Use of force protocols",
+    "Facility safety & security",
+    "Patient prep (CT/vitals/positioning)",
+    "Healthcare procedures",
+    "Inventory management",
+    "Team leadership",
+    "Food safety compliance",
+    "OSHA safety standards",
+    "BLS life support"
+  ],
+  "target_jobs": ["Security Officer", "Correctional Officer", "Overnight Manager", "Healthcare Assistant"],
+  "long_term_goals": ["Firefighter (July program)", "AI Engineer"],
+  "references": [
+    {
+      "name": "Faith Hall",
+      "phone": "448-449-1105",
+      "address": "1925 Corvallis Ave",
+      "occupation": "Medical Assistant",
+      "email": "faithha11274@gmail.com"
+    },
+    {
+      "name": "Jennifer Brown",
+      "phone": "352-328-8114",
+      "address": "17758 NW 238TH ST, High Springs FL 32643",
+      "occupation": "X-ray Technologist",
+      "email": "brown_jl@hotmail.com"
+    },
+    {
+      "name": "Cynthia Hall",
+      "phone": "610-357-1099",
+      "address": "",
+      "occupation": "Customer Service",
+      "email": "N/A"
+    }
+  ],
+  "social_acquaintances": [
+    {
+      "name": "Tabitha Howard",
+      "phone": "254-393-7398",
+      "address": "276 B Old Boston Rd, Thomasville GA 31792",
+      "occupation": "LPN",
+      "email": "tabithahoward54@gmail.com"
+    },
+    {
+      "name": "Karaun Mills",
+      "phone": "850-688-4332",
+      "address": "205 SE 3rd St, Havana FL",
+      "occupation": "Truck Driver",
+      "email": "Karuunmills7@gmail.com"
+    },
+    {
+      "name": "Travon Toomer",
+      "phone": "850-938-6358",
+      "address": "N/A",
+      "occupation": "Construction Worker",
+      "email": "ToomerTravon704@gmail.com"
+    }
+  ],
+  "neighbors": [
+    {
+      "name": "Kendrick Washington",
+      "phone": "448-867-1107",
+      "address": "2700 W Pensacola St",
+      "occupation": "Medical Assistant",
+      "email": "kendrickwashington246@gmail.com"
+    },
+    {
+      "name": "Dalasia McClendon",
+      "phone": "850-980-2239",
+      "address": "1966 Bloomington Rd",
+      "occupation": "Medical Assistant",
+      "email": "dalasiamcclendon765@gmail.com"
+    },
+    {
+      "name": "Nick Thompson",
+      "phone": "850-591-3380",
+      "address": "2002 Corvallis Ave",
+      "occupation": "",
+      "email": ""
+    }
+  ]
+}
